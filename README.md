@@ -17,6 +17,8 @@ First of all, I wrote [this little program](https://github.com/paulahemsi/ft_pri
 
 Those are the format identifier's I nedd to recode:
 
+%  | type |
+---|------|
 %c | character				|
 %s | string					|
 %p | pointer				|
@@ -29,11 +31,13 @@ Those are the format identifier's I nedd to recode:
 
 And those are the flags:
 
+flag| ? |
+----|---|
 num	| (number between % and the identifier) minimum field width						|
-- 	| left justify 																	|
-0 	| field padded with 0's instead of blanks										|
-. 	| maximum field width															|
-* 	| indicates that the maximum or minimum field width will be passed as parameter	|
+'-' 	| left justify 																	|
+'0' 	| field padded with 0's instead of blanks										|
+'.' 	| maximum field width															|
+'*' 	| indicates that the maximum or minimum field width will be passed as parameter	|
 
 To be aware:
 
