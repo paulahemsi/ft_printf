@@ -6,13 +6,14 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 20:26:47 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/05 21:32:21 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/06 09:13:03 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
+# include "./libraries/libft/libft.h"
 # include <stdarg.h>
 
 # define TRUE	1
