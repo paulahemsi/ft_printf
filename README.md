@@ -50,7 +50,8 @@ To be aware:
 ## study || further reading
 
 * [variadic functions -intro](https://www.youtube.com/watch?v=FgvrnYScdH8)
-
+* [layout of directories](http://syque.com/cstyle/ch7.1.htm)
+* [format specification syntax](https://docs.microsoft.com/pt-br/cpp/c-runtime-library/format-specification-syntax-printf-and-wprintf-functions?view=msvc-160)
 
 ## tests
    
