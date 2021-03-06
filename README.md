@@ -13,7 +13,7 @@ The key to a successful ft_printf is a well-structured and good extensible code.
 
 ## step by step
 
-First of all, I wrote [this little program](https://github.com/paulahemsi/ft_printf/blob/main/understanding_printf_flags.pdf) just to understand the subject and printf's flags.
+First of all, I wrote [this little program](understanding_printf_flags.c) just to understand the subject and printf's flags.
 
 Those are the format identifier's I nedd to recode:
 
