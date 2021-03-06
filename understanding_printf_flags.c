@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 13:35:20 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/05 09:08:34 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/05 20:41:58 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -175,7 +175,7 @@ int	main(void)
 	printf("\n");
 	printf("%-60s: |%.2d|", "maximum (2) field", hex_neg);
 	printf("\n");
-	printf("%-60s: |%-.1d|", "maximum (1) field left align", hex_neg);
+	printf("%-60s: |%-.10d|", "maximum (10) field left align", hex_neg);
 	printf("\n");
 	printf("%-60s: |%-20.1d|", "minimum (20) and maximum (1) field left align", -42);
 	printf("\n");
