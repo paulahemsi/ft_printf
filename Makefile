@@ -6,7 +6,7 @@
 #    By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/05 21:18:02 by phemsi-a          #+#    #+#              #
-#    Updated: 2021/03/06 10:03:05 by phemsi-a         ###   ########.fr        #
+#    Updated: 2021/03/06 15:13:04 by phemsi-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = libftprintf.a
 LIBFT = ./libraries/libft/
 SRC = ./source/
 
-FILES = $(SRC)ft_printf.c, $(LIBFT)ft_strdup.c, $(LIBFT)ft_strchr.c, $(LIBFT)ft_strjoin.c, $(LIBFT)ft_substr.c, $(LIBFT)ft_itoa.c, $(LIBFT)ft_putstr_bonus.c, $(LIBFT)ft_strlen.c, $(LIBFT)ft_putchar_bonus.c
+FILES = $(SRC)ft_printf.c, $(SRC)flags_parser.c $(LIBFT)ft_strdup.c, $(LIBFT)ft_strchr.c, $(LIBFT)ft_strjoin.c, $(LIBFT)ft_substr.c, $(LIBFT)ft_itoa.c, $(LIBFT)ft_putstr_bonus.c, $(LIBFT)ft_strlen.c, $(LIBFT)ft_putchar_bonus.c
 
 OBJECTS = $(FILES:.c=.o)
 

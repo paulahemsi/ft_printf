@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 21:16:09 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/06 13:49:18 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/07 16:58:19 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,90 +22,33 @@ static int	find_length(char *str, char *pointer)
 	return (length);
 }
 
-static int update_str(char **str_return, char **str_temp, char **str_aux)
+static int	ft_printf_recursive(char *str, va_list args, size_t length)
 {
-	free(*str_return);
-	free(*str_aux);
-	if (*str_temp == NULL)
+	char	*percent_pointer;
+	char	*str_aux;
+
+	if (!(percent_pointer = ft_strchr(str, '%')))
+	{
+		length += ft_strlen(str);
+		ft_putstr(str);
+		return (length);
+	}
+	if (!(str_aux = ft_substr(str, 0, find_length(str, percent_pointer))))
 		return (ERROR);
-	*str_return = *str_temp;
-	return (0);
-}
-
-static char	*flags_parser(char **pointer, va_list args)
-{
-	char	*parsed_str;
-	char	*initial_ptr;
-	int		i;
-
-	i = 0;
-	initial_ptr = *pointer;
-	initial_ptr++;
-	parsed_str = ft_strdup("");
-	if (*initial_ptr == 'i')
-	{
-		free(parsed_str);
-		parsed_str = ft_itoa(va_arg(args, int));
-		initial_ptr++;
-	}
-	else if (*initial_ptr == '%')
-	{
-		free(parsed_str);
-		parsed_str = ft_strdup("%");
-		initial_ptr++;
-	}
-	*pointer = initial_ptr;
-	return (parsed_str);
-}
-
-static int	ft_printf_recursive(char *str, va_list args)
-{
-	int				length;
-	char			*pointer;
-	char			*str_temp;
-	char			*str_aux;
-	static char		*str_return;
-
-	if (str_return == NULL)
-		str_return = ft_strdup("");
-	if (!(pointer = ft_strchr(str, '%')))
-	{
-		str_temp = ft_strjoin(str_return, str);
-		free(str_return);
-		str_return = str_temp;
-		ft_putstr(str_return);
-		free(str_return);
-		return (1);
-	}
-	else
-	{
-		length = find_length(str, pointer);
-		if (!(str_aux = ft_substr(str, 0, length)))
-			return (ERROR);
-		str_temp = ft_strjoin(str_return, str_aux);
-		if (update_str(&str_return, &str_temp, &str_aux) == ERROR)
-			return (ERROR);
-		if (!(str_aux = flags_parser(&pointer, args)))
-			return (ERROR);
-		str_temp =ft_strjoin(str_return, str_aux);
-		if (update_str(&str_return, &str_temp, &str_aux) == ERROR)
-			return (ERROR);
-		return (ft_printf_recursive(pointer, args));
-	}
+	ft_putstr(str_aux);
+	length += ft_strlen(str_aux);
+	free(str_aux);
+	length = flags_parser(&percent_pointer, args, length);
+	return (ft_printf_recursive(percent_pointer, args, length));
 }
 
 int			ft_printf(const char *str, ...)
 {
 	va_list	args;
+	int		return_num;
 
 	va_start(args, str);
-	if (ft_printf_recursive((char *)str,args) == ERROR)
-		return (ERROR);
+	return_num = ft_printf_recursive((char *)str, args, 0);
 	va_end(args);
-	return (0);
-}
-
-int main(void)
-{
-	ft_printf("uma string com uma porcentagem %% e um número(42) %i e outro número (dessa vez 1048) %i e vamos mais um(1234567) %i", 42, 1048, 1234567);
+	return (return_num);
 }
