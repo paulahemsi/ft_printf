@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 15:11:09 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/07 21:09:02 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/07 21:45:44 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	identifier_parser(flags *flag, va_list args)
 		print_char(flag, args);
 }
 
-int			ft_count_number(int number)
+static int		ft_count_number(int number)
 {
 	size_t digits;
 
@@ -62,10 +62,18 @@ size_t		flags_parser(char **pointer, va_list args, size_t length)
 				flag.zero_padding = TRUE;
 			flag.pointer++;
 		}
-		if (ft_isdigit(*flag.pointer))
+		if (ft_isdigit(*flag.pointer) || *flag.pointer == '*')
 		{
-			flag.min_width = ft_atoi(flag.pointer);
-			flag.pointer += ft_count_number(flag.min_width);
+			if (*flag.pointer == '*')
+			{
+				flag.star_width = TRUE;
+				flag.pointer++;
+			}
+			else
+			{
+				flag.min_width = ft_atoi(flag.pointer);
+				flag.pointer += ft_count_number(flag.min_width);
+			}
 		}
 		if (*flag.pointer == '.')
 		{
