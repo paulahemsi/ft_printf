@@ -6,7 +6,7 @@
 #    By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/05 21:18:02 by phemsi-a          #+#    #+#              #
-#    Updated: 2021/03/07 21:18:00 by phemsi-a         ###   ########.fr        #
+#    Updated: 2021/03/07 21:30:48 by phemsi-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,8 @@ $(OBJECTS): $(FILES)
 	$(CC) $(FLAGS) -c $(FILES)
 
 test:
-	$(CC) $(CFLAGS) -fsanitize=leak $(FILES) && ./a.out
+	@echo making test........
+	@$(CC) $(CFLAGS) -fsanitize=leak $(FILES) && ./a.out
 
 clean:
 	$(RM) $(OBJECTS) $(BONUS_OBJECTS)
