@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 15:11:09 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/07 22:16:52 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/08 15:25:01 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,15 @@ static void	identifier_parser(flags *flag, va_list args)
 {
 	if (*flag->pointer == 'c')
 		print_char(flag, args);
+	if (*flag->pointer == 's')
+		print_string(flag, args);
 }
 
-static void	update_width(flags *flag)
+static void	update_width(flags *flag, va_list args)
 {
 	if (*flag->pointer == '*')
 	{
-		flag->star_width = TRUE;
+		flag->min_width = va_arg(args, int);
 		flag->pointer++;
 	}
 	else
@@ -41,13 +43,12 @@ static void	update_padding(flags *flag)
 	flag->pointer++;
 }
 
-static void	update_precision(flags *flag)
+static void	update_precision(flags *flag, va_list args)
 {
-	flag->precision = TRUE;
 	flag->pointer++;
 	if (*flag->pointer == '*')
 	{
-		flag->star_precision = TRUE;
+		flag->precision = va_arg(args, int);
 		flag->pointer++;
 	}
 	else if (ft_isdigit(*flag->pointer))
@@ -75,9 +76,9 @@ size_t		flags_parser(char **pointer, va_list args, size_t length)
 		while (ft_strchr("-0", *flag.pointer))
 			update_padding(&flag);
 		if (ft_isdigit(*flag.pointer) || *flag.pointer == '*')
-			update_width(&flag);
+			update_width(&flag, args);
 		if (*flag.pointer == '.')
-			update_precision(&flag);
+			update_precision(&flag, args);
 		if (ft_isalpha(*flag.pointer))
 			identifier_parser(&flag, args);
 		flag.pointer++;

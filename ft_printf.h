@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 20:26:47 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/07 21:10:51 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/08 15:25:14 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,12 @@ typedef	struct	ft_printf
 	int			left_align;
 	int			zero_padding;
 	int			min_width;
-	int			precision;
-	int			star_width;
-	int			star_precision;	
+	int			precision;	
 }				flags;
 
 int		ft_printf(const char *str, ...);
 size_t	flags_parser(char **pointer, va_list args, size_t length);
 void	print_char(flags *flag, va_list args);
+void	print_string(flags *flag, va_list args);
 
 #endif
