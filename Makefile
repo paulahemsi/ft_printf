@@ -6,7 +6,7 @@
 #    By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/05 21:18:02 by phemsi-a          #+#    #+#              #
-#    Updated: 2021/03/06 15:13:04 by phemsi-a         ###   ########.fr        #
+#    Updated: 2021/03/07 21:18:00 by phemsi-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,9 @@ NAME = libftprintf.a
 
 LIBFT = ./libraries/libft/
 SRC = ./source/
+PRINT = ./source/parsing_identifiers/
 
-FILES = $(SRC)ft_printf.c, $(SRC)flags_parser.c $(LIBFT)ft_strdup.c, $(LIBFT)ft_strchr.c, $(LIBFT)ft_strjoin.c, $(LIBFT)ft_substr.c, $(LIBFT)ft_itoa.c, $(LIBFT)ft_putstr_bonus.c, $(LIBFT)ft_strlen.c, $(LIBFT)ft_putchar_bonus.c
-
+FILES = $(SRC)ft_printf.c $(SRC)flags_parser.c $(PRINT)print_char.c $(LIBFT)ft_strdup.c $(LIBFT)ft_strchr.c $(LIBFT)ft_strjoin.c $(LIBFT)ft_substr.c $(LIBFT)ft_itoa.c $(LIBFT)ft_putstr_bonus.c $(LIBFT)ft_strlen.c $(LIBFT)ft_putchar_bonus.c $(LIBFT)ft_isdigit.c $(LIBFT)ft_atoi.c $(LIBFT)ft_isalpha.c $(LIBFT)ft_putnbr_bonus.c $(LIBFT)ft_memset.c
 OBJECTS = $(FILES:.c=.o)
 
 CC = clang
@@ -32,7 +32,7 @@ $(OBJECTS): $(FILES)
 	$(CC) $(FLAGS) -c $(FILES)
 
 test:
-	$(CC) $(CFLAGS) $(FILES) && ./a.out
+	$(CC) $(CFLAGS) -fsanitize=leak $(FILES) && ./a.out
 
 clean:
 	$(RM) $(OBJECTS) $(BONUS_OBJECTS)
