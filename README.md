@@ -48,7 +48,7 @@ To be aware:
 
 (due my researches and empirical tests, 'undefined behavior' means the flags will be ignored, just as the '0' with '-')
 
->Format tags prototype is %|flags||width||.precision||length|specifier
+>Format tags prototype is %|flags| |width| |.precision| |length| |specifier|
 
 ## mindmap *in process*
 
@@ -57,6 +57,7 @@ To be aware:
 ## study || further reading
 
 * [printf overview](https://www.tutorialspoint.com/c_standard_library/c_function_printf.htm)
+* [secrets of printf](https://www.cypress.com/file/54441/download)
 * [variadic functions -intro](https://www.youtube.com/watch?v=FgvrnYScdH8)
 * [va-arg](https://www.tutorialspoint.com/c_standard_library/c_macro_va_arg.htm)
 * [layout of directories](http://syque.com/cstyle/ch7.1.htm)
