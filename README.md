@@ -55,9 +55,11 @@ To be aware:
 
 >Format tags prototype is %|flags| |width| |.precision| |length| |specifier|
 
+>The width specification never causes a value to be truncated. If the number of characters in the output value is greater than the specified width, or if width isn't provided, all characters of the value are output.
+
 ## mindmap *in process*
 
-![](ft_printf.jpg)
+![](mindmap.jpg)
 
 ## study || further reading
 
