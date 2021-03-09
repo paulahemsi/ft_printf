@@ -37,12 +37,17 @@ flag| ? |
 num	| (number between % and the identifier) minimum field width						|
 '-' 	| left justify 																	|
 '0' 	| field padded with 0's instead of blanks										|
-'.' 	| maximum field width															|
+'.' 	| precision															|
 '*' 	| indicates that the maximum or minimum field width will be passed as parameter	|
+
+**For %d and %i, the precision is the minimum number of digits to print.**
+
+**For %s, the precision is the maximum field width.**
 
 To be aware:
 
 * flag '0' is ignored when flag '-' is present
+* flag '0' is ignored when flag '.' is present (%d e %i)
 * flag '0' results in undefined behavior with '%c', '%s' and '%p'
 * flag '.' results in undefined behavior with '%c' and '%p'
 

@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 14:49:08 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/08 15:41:09 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/08 15:49:33 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	print_string(flags *flag, va_list args)
 		flag->min_width--;
 	}
 	if (!(flag->left_align))
-	{	
+	{
 		ft_putstr(string);
 		flag->length += ft_strlen(string);
 	}

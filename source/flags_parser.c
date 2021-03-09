@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 15:11:09 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/08 15:25:01 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/08 21:54:48 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ static void	identifier_parser(flags *flag, va_list args)
 		print_char(flag, args);
 	if (*flag->pointer == 's')
 		print_string(flag, args);
+	if (*flag->pointer == 'p')
+		print_pointer(flag, args);
+	if (*flag->pointer == 'd' || *flag->pointer == 'i')
+		print_integer(flag, args);
 }
 
 static void	update_width(flags *flag, va_list args)
