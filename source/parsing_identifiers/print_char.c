@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 18:18:16 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/08 15:43:07 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/09 10:34:19 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	print_char(flags *flag, va_list args)
 		ft_putchar((char)va_arg(args, int));
 		flag->length++;
 	}
-	while (flag->min_width > 0)
+	while (flag->min_width > 1)
 	{
 		ft_putchar(' ');
 		flag->length++;
