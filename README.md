@@ -63,7 +63,7 @@ To be aware:
 
 ## %d and %i
 
-![](integers.jpg)
+![](integers_map.jpg)
 
 ## study || further reading
 
