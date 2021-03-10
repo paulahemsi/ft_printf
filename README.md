@@ -61,6 +61,10 @@ To be aware:
 
 ![](mindmap.jpg)
 
+## %d and %i
+
+![](integers.jpg)
+
 ## study || further reading
 
 * [printf overview](https://www.tutorialspoint.com/c_standard_library/c_function_printf.htm)
