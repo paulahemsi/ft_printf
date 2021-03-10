@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 20:26:47 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/08 22:39:47 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/09 18:32:50 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 typedef	struct	ft_printf
 {
 	char		*pointer;
-	size_t		length;
+	int			length;
 	int			left_align;
 	int			zero_padding;
 	int			min_width;

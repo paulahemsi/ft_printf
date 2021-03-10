@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 13:35:20 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/09 08:20:25 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/10 09:29:42 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int	main(void)
 	printf("\n");
 	printf("%-60s: |%c|","format identifier", 'x');
 	printf("\n");
-	printf("%-60s: |%20c|", "with minimum field (20) width", 'x');
+	printf("%-60s: |%2c|", "with minimum field (2) width", 'x');
 	printf("\n");
 	printf("%-60s: |%-20c|", "minimum field (20) left align", 'x');
 	printf("\n");
@@ -137,21 +137,25 @@ int	main(void)
 	printf("\n");
 	printf("%-60s: |%d|","(hex) format identifier", hex_neg);
 	printf("\n");
-	printf("%-60s: |%20d|", "with minimum field (20) width", -42);
+	printf("%-60s: |%-3d|", "with minimum field (3) width", -42);
 	printf("\n");
-	printf("%-60s: |%020d|", "minimum field (20) width with 0's", -42);
+	printf("%-60s: |%5d|", "with minimum field (5) width", -42);
 	printf("\n");
-	printf("%-60s: |%-20d|", "minimum field (20) left align", -42);
+	printf("%-60s: |%05d|", "with minimum field (5) width and 0 padding", -42);
 	printf("\n");
-	printf("%-60s: |%20.1d|", "precision (1) and minimum (20) field", -42);
+	printf("%-60s: |%5.3d|", "minimum field (5) width with 0's", -42);
 	printf("\n");
-	printf("%-60s: |%.2d|", "precision (2) field", hex_neg);
+	printf("%-60s: |%-5d|", "minimum field (5) left align", -42);
 	printf("\n");
-	printf("%-60s: |%-.10d|", "precision (10) field left align", hex_neg);
+	printf("%-60s: |%5.1d|", "precision (1) and minimum (5) field", -42);
 	printf("\n");
-	printf("%-60s: |%20.10d|", "minimum (20) and precision (10) field", -12345678);
+	printf("%-60s: |%.3d|", "precision (3) field", hex_neg);
 	printf("\n");
-	printf("%-60s: |%-20.10d|", "minimum (20) and precision (10) field left align", -12345678);
+	printf("%-60s: |%-.5d|", "precision (5) field left align", hex_neg);
+	printf("\n");
+	printf("%-60s: |%10.5d|", "minimum (10) and precision (5) field", -42);
+	printf("\n");
+	printf("%-60s: |%-10.5d|", "minimum (10) and precision (5) field left align", -42);
 	printf("\n");
 	printf("%-60s: |%-*.*d|", "minimum (20) and precision (1) field left align", 20, 1, hex_neg);
 	printf("\n");
