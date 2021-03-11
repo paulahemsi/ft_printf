@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 21:16:09 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/10 23:02:40 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/10 23:10:24 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,18 +51,4 @@ int			ft_printf(const char *str, ...)
 	return_num = ft_printf_recursive((char *)str, args, 0);
 	va_end(args);
 	return (return_num);
-}
-
-int main(void)
-{
-	// int i;
-	// int *ptr;
-	// int **ptr2;
-
-	// i = -33;
-	// ptr = &i;
-	// ptr2 = &ptr;
-	// int hex = 0x2a;
-	ft_putnbr(ft_printf("%06u|\n%-5d|\n%05.3i|\n", -121, 42, 42));
-	return (0);
 }
