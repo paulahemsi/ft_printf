@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 15:11:09 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/08 21:54:48 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/10 22:56:39 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,79 +14,81 @@
 
 static void	identifier_parser(flags *flag, va_list args)
 {
-	if (*flag->pointer == 'c')
+	if (*flag->ptr == 'c')
 		print_char(flag, args);
-	if (*flag->pointer == 's')
+	else if (*flag->ptr == 's')
 		print_string(flag, args);
-	if (*flag->pointer == 'p')
-		print_pointer(flag, args);
-	if (*flag->pointer == 'd' || *flag->pointer == 'i')
+	//else if (*flag->ptr == 'p')
+	// 	print_pointer(flag, args);
+	else if (*flag->ptr == 'd' || *flag->ptr == 'i')
 		print_integer(flag, args);
+	else if (*flag->ptr == 'u')
+		print_unsigned_int(flag, args);
 }
 
 static void	update_width(flags *flag, va_list args)
 {
-	if (*flag->pointer == '*')
+	if (*flag->ptr == '*')
 	{
 		flag->min_width = va_arg(args, int);
-		flag->pointer++;
+		flag->ptr++;
 	}
 	else
 	{
-		flag->min_width = ft_atoi(flag->pointer);
-		flag->pointer += ft_numlen(flag->min_width);
+		flag->min_width = ft_atoi(flag->ptr);
+		flag->ptr += ft_numlen(flag->min_width);
 	}
 }
 
 static void	update_padding(flags *flag)
 {
-	if (*flag->pointer == '-')
+	if (*flag->ptr == '-')
 		flag->left_align = TRUE;
-	if (*flag->pointer == '0')
+	if (*flag->ptr == '0')
 		flag->zero_padding = TRUE;
-	flag->pointer++;
+	flag->ptr++;
 }
 
 static void	update_precision(flags *flag, va_list args)
 {
-	flag->pointer++;
-	if (*flag->pointer == '*')
+	flag->ptr++;
+	if (*flag->ptr == '*')
 	{
 		flag->precision = va_arg(args, int);
-		flag->pointer++;
+		flag->ptr++;
 	}
-	else if (ft_isdigit(*flag->pointer))
+	else if (ft_isdigit(*flag->ptr))
 	{
-		flag->precision = ft_atoi(flag->pointer);
-		flag->pointer += ft_numlen(flag->precision);
+		flag->precision = ft_atoi(flag->ptr);
+		flag->ptr += ft_numlen(flag->precision);
 	}
 }
 
-size_t		flags_parser(char **pointer, va_list args, size_t length)
+size_t		flags_parser(char **ptr, va_list args, size_t length)
 {
 	flags	flag;
 
 	ft_memset(&flag, 0, sizeof(flag));
 	flag.length = length;
-	flag.pointer = *pointer + 1;
-	if (*flag.pointer == '%')
+	flag.ptr = *ptr + 1;
+	if (*flag.ptr == '%')
 	{
 		ft_putchar('%');
 		flag.length++;
-		flag.pointer++;
+		flag.ptr++;
 	}
 	else
 	{
-		while (ft_strchr("-0", *flag.pointer))
+		while (ft_strchr("-0", *flag.ptr))
 			update_padding(&flag);
-		if (ft_isdigit(*flag.pointer) || *flag.pointer == '*')
+		if (ft_isdigit(*flag.ptr) || *flag.ptr == '*')
 			update_width(&flag, args);
-		if (*flag.pointer == '.')
+		if (*flag.ptr == '.')
 			update_precision(&flag, args);
-		if (ft_isalpha(*flag.pointer))
+		if (ft_isalpha(*flag.ptr))
 			identifier_parser(&flag, args);
-		flag.pointer++;
+		flag.ptr++;
 	}
-	*pointer = flag.pointer;
+	*ptr = flag.ptr;
 	return (flag.length);
 }
