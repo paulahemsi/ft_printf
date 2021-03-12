@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 23:34:03 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/12 11:37:00 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/12 18:44:48 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void		print_hex(flags *flag, va_list args)
 	char	*hex;
 	int		hex_len;
 
-	hex = ft_itoa_hex(va_arg(args, int), *flag->ptr);
+	hex = ft_itoa_hex(va_arg(args, unsigned int), *flag->ptr);
 	hex_len = ft_strlen(hex);
 	if (!(flag->left_align))
 		print_width(flag, hex_len);
