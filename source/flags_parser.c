@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 15:11:09 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/12 13:41:59 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/12 14:16:01 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,7 @@
 
 static void	identifier_parser(flags *flag, va_list args)
 {
-	if (*flag->ptr == '%')
-	{
-		ft_putchar('%');
-		flag->length++;
-	}
-	else if (*flag->ptr == 'c')
+	if ((*flag->ptr == 'c') || (*flag->ptr == '%'))
 		print_char(flag, args);
 	else if (*flag->ptr == 's')
 		print_string(flag, args);
