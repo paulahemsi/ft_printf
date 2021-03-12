@@ -65,6 +65,10 @@ To be aware:
 
 ![](integers_map.jpg)
 
+## decimal to hexadecimal conversion
+
+![](dec_to_hex.jpg)
+
 ## study || further reading
 
 * [printf overview](https://www.tutorialspoint.com/c_standard_library/c_function_printf.htm)
