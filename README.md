@@ -59,7 +59,7 @@ To be aware:
 
 ## mindmap
 
-![](mindmap.jpg)
+![](fluxograma.jpg)
 
 ## %d and %i
 
