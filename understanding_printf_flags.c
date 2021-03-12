@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 13:35:20 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/10 09:29:42 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/12 09:15:08 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -257,7 +257,7 @@ int	main(void)
 	printf("\n");
 	printf("\n");
 	yellow();
-	printf("---------------------------------------------hex_integer_lowercase----------------------------------------------------\n");
+	printf("---------------------------------------------hex_integer_uppercase----------------------------------------------------\n");
 	reset();
 	printf("\n");
 	printf("%-60s: |%X|","(int) format identifier", integer);
@@ -270,7 +270,7 @@ int	main(void)
 	printf("\n");
 	printf("%-60s: |%020X|", "(int) minimum field (20) width with 0's", integer);
 	printf("\n");
-	printf("%-60s: |%020x|", "(hex) minimum field (20) width with 0's", hex);
+	printf("%-60s: |%020X|", "(hex) minimum field (20) width with 0's", hex);
 	printf("\n");
 	printf("%-60s: |%-20X|", "(int) minimum field (20) left align", integer);
 	printf("\n");
