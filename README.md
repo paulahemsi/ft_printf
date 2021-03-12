@@ -2,7 +2,7 @@
  recode printf :astonished:
 
 * [Introduction](#introduction)
-* [Step by step](#step)
+* [Step by step](#step_by_step)
 * [Mindmap](#mindmap) 
 * [Study resources](#study)
 * [Testing](#tests) 
@@ -12,7 +12,7 @@
 The versatility of the printf function in C represents a great exercise in programming for us. This [project](https://github.com/paulahemsi/ft_printf/blob/main/en.subject.pdf) is of moderate difficulty. It will enable you to discover variadic functions in C.
 The key to a successful ft_printf is a well-structured and good extensible code.
 
-## step by step
+## step_by_step
 
 First of all, I wrote [this little program](understanding_printf_flags.c) just to understand the subject and printf's flags.
 
@@ -57,7 +57,7 @@ To be aware:
 
 >The width specification never causes a value to be truncated. If the number of characters in the output value is greater than the specified width, or if width isn't provided, all characters of the value are output.
 
-## mindmap *in process*
+## mindmap
 
 ![](fluxograma.jpg)
 
@@ -69,7 +69,7 @@ To be aware:
 
 ![](dec_to_hex.jpg)
 
-## study || further reading
+## study
 
 * [printf overview](https://www.tutorialspoint.com/c_standard_library/c_function_printf.htm)
 * [secrets of printf](https://www.cypress.com/file/54441/download)
