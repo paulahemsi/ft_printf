@@ -6,13 +6,13 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 09:50:17 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/12 10:34:35 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/12 13:38:47 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa_hex(unsigned int number, char case_conversion_char)
+char	*ft_itoa_hex(unsigned long int number, char case_conversion_char)
 {
 	char	*hex;
 	int		convert_to_hex;
