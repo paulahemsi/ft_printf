@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 21:52:50 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/10 22:53:02 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/12 16:42:51 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static void	print_width(flags *flag, int num_len, char sign)
 
 static void	print_rigth_align(flags *flag, int num_len, char sign, int number)
 {
-	if (flag->zero_padding)
+	if (flag->zero_padding && !(flag->precision))
 	{
 		print_sign(flag, sign);
 		print_width(flag, num_len, sign);

@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 09:50:17 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/12 13:38:47 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/12 17:08:11 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,17 @@ char	*ft_itoa_hex(unsigned long int number, char case_conversion_char)
 	int		case_conversion;
 
 	length = ft_countdigit(number);
-	hex = (char *)malloc((length + 1) * sizeof(char));
-	if (!hex)
+	if (!(hex = (char *)malloc((length + 1) * sizeof(char))))
 		return (NULL);
 	hex[length] = '\0';
 	if (case_conversion_char == 'X')
 		case_conversion = 55;
 	else
 		case_conversion = 87;
-	while (number > 0)
+	if (number == 0)
+		hex[0] = '0';
+	while (length--)
 	{
-		length--;
 		convert_to_hex = number % 16;
 		if (convert_to_hex < 10)
 			hex[length] = convert_to_hex + 48;
