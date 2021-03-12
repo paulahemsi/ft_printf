@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 09:50:17 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/12 10:23:23 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/12 10:34:35 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_itoa_hex(unsigned int number, char case_conversion_char)
 			hex[length] = convert_to_hex + 48;
 		else
 			hex[length] = convert_to_hex + case_conversion;
-		number /= 16;	
+		number /= 16;
 	}
 	return (hex);
 }
