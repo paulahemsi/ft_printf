@@ -67,7 +67,7 @@ To be aware:
 
 ## decimal to hexadecimal conversion
 
-![](dec_to_hex.jpg)
+![](hex_conversion.jpg)
 
 ## study
 
