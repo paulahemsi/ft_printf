@@ -74,6 +74,7 @@ To be aware:
 * [layout of directories](http://syque.com/cstyle/ch7.1.htm)
 * [format specification syntax](https://docs.microsoft.com/pt-br/cpp/c-runtime-library/format-specification-syntax-printf-and-wprintf-functions?view=msvc-160)
 * [%p *versus* %x](https://www.viva64.com/en/k/0019/)
+* [decimal to hex conversion](https://www.youtube.com/watch?v=QJW6qnfhC70)
 
 ## tests
    
