@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 15:11:09 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/12 14:16:01 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/12 18:32:46 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ static void	update_precision(flags *flag, va_list args)
 		flag->precision = ft_atoi(flag->ptr);
 		flag->ptr += ft_numlen(flag->precision);
 	}
+	else
+		flag->precision = 0;
 }
 
 size_t		flags_parser(char **ptr, va_list args, size_t length)
@@ -71,6 +73,7 @@ size_t		flags_parser(char **ptr, va_list args, size_t length)
 	flags	flag;
 
 	ft_memset(&flag, 0, sizeof(flag));
+	flag.precision = -1;
 	flag.length = length;
 	flag.ptr = *ptr + 1;
 	while (ft_strchr("-0", *flag.ptr))
