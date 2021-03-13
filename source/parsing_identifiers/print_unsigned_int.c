@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 22:52:22 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/12 23:51:41 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/12 23:59:28 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static void	print_width(flags *flag, int num_len)
 	char	c;
 	int		limit;
 
-	if ((flag->zero_padding) && (flag->precision != 0) && !(flag->left_align))
+	if ((flag->zero_padding) && (flag->precision < 0) && !(flag->left_align))
 		c = '0';
 	else
 		c = ' ';
