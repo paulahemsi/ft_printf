@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 18:18:16 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/12 19:03:38 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/12 23:27:02 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	print_char(flags *flag, va_list args)
 {
 	char c;
 
-	if ((flag->zero_padding) && (*flag->ptr == '%'))
+	if ((flag->zero_padding) && (*flag->ptr == '%') && !(flag->left_align))
 		c = '0';
 	else
 		c = ' ';
