@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 15:11:09 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/13 16:17:14 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/13 19:14:46 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ static void	update_precision(flags *flag, va_list args)
 	}
 	else
 		flag->precision = 0;
+	if ((flag->precision >= 0) && (*flag->ptr != '%'))
+		flag->zero_padding = FALSE;
 }
 
 size_t		flags_parser(char **ptr, va_list args, size_t length)
