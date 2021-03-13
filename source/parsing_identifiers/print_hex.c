@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 23:34:03 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/13 09:29:26 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/13 09:59:03 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,10 @@ static void	print_width(flags *flag, int hex_len)
 		c = ' ';
 	if (flag->precision > hex_len)
 		limit = flag->precision;
-	else
+	else if (flag->precision != 0)
 		limit = hex_len;
+	else
+		limit = 0;
 	while (flag->min_width > limit)
 	{
 		ft_putchar(c);
@@ -54,7 +56,8 @@ void		print_hex(flags *flag, va_list args)
 	if (!(flag->left_align))
 		print_width(flag, hex_len);
 	print_precision(flag, (flag->precision - hex_len));
-	ft_putstr(hex);
+	if (flag->precision > 0)
+		ft_putstr(hex);
 	if (flag->left_align)
 		print_width(flag, hex_len);
 	free(hex);
