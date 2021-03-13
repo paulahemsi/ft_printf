@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 09:50:17 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/13 09:29:00 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/13 09:49:52 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,11 @@ char	*ft_itoa_hex(unsigned long int number, char case_conversion_char)
 	else
 		case_conversion = 87;
 	if (number == 0)
+	{
 		hex[0] = '0';
+		hex[1] = '\0';
+		return(hex);
+	}
 	length = 0;
 	while (number > 0)
 	{
@@ -51,7 +55,5 @@ char	*ft_itoa_hex(unsigned long int number, char case_conversion_char)
         hex[case_conversion - length - 1] = temp;
         length++;
     }
-	//!desinverter array aqui ou pensar em outra maneira mais prática
-	//!tava colocando um 0 na frente por causa do tamanho maior e da length errada
 	return (hex);
 }
