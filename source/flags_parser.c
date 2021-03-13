@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 15:11:09 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/13 12:54:42 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/13 13:05:37 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static void	update_precision(flags *flag, va_list args)
 		flag->precision = va_arg(args, int);
 		flag->ptr++;
 	}
-	if (ft_isdigit(*flag->ptr))
+	else if (ft_isdigit(*flag->ptr))
 	{
 		while (ft_isdigit(*flag->ptr))
 		{
