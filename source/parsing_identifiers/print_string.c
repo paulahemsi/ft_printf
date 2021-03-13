@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 14:49:08 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/13 11:22:18 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/13 18:04:56 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	print_string(flags *flag, va_list args)
 	char	*string;
 	int		length;
 
-	if (flag->precision)
+	if (flag->precision != -1)
 		string = ft_substr(va_arg(args, char *), 0, flag->precision);
 	else
 		string = ft_strdup(va_arg(args, char *));
