@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 15:11:09 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/13 13:05:37 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/13 14:29:28 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,11 @@ static void	update_width(flags *flag, va_list args)
 	if (*flag->ptr == '*')
 	{
 		flag->min_width = va_arg(args, int);
+		if (flag->min_width < 0)
+		{
+			flag->left_align = TRUE;
+			flag->min_width *= -1;
+		}
 		flag->ptr++;
 	}
 	else

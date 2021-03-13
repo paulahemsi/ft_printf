@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 21:52:50 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/13 14:12:32 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/13 14:37:46 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static void	print_width(flags *flag, int num_len, char sign)
 	s = 0;
 	if (sign)
 		s = 1;
-	if ((flag->zero_padding) && (flag->precision == -1) && !(flag->left_align))
+	if ((flag->zero_padding) && (flag->precision < 0) && !(flag->left_align))
 		c = '0';
 	else
 		c = ' ';
@@ -60,7 +60,7 @@ static void	print_width(flags *flag, int num_len, char sign)
 
 static void	print_rigth_align(flags *flag, int num_len, char sign, int number)
 {
-	if (flag->zero_padding && (flag->precision <= 0))
+	if (flag->zero_padding && (flag->precision != 0))
 	{
 		print_sign(flag, sign);
 		print_width(flag, num_len, sign);
@@ -71,7 +71,7 @@ static void	print_rigth_align(flags *flag, int num_len, char sign, int number)
 		print_sign(flag, sign);
 	}
 	print_precision(flag, (flag->precision - num_len));
-	if (number)
+	if (number || (flag->precision != 0))
 		ft_putnbr_unsigned(number);
 }
 
@@ -92,7 +92,7 @@ void		print_integer(flags *flag, va_list args)
 	{
 		print_sign(flag, sign);
 		print_precision(flag, (flag->precision - num_len));
-		if (number)
+		if (number || (flag->precision != 0))
 			ft_putnbr_unsigned(number);
 		print_width(flag, num_len, sign);
 	}
