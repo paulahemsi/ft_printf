@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 21:52:50 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/12 23:43:47 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/13 12:23:41 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void		print_integer(flags *flag, va_list args)
 	{
 		print_sign(flag, sign);
 		print_precision(flag, (flag->precision - num_len));
-		if (flag->precision != 0)
+		if ((flag->precision != 0))
 			ft_putnbr(number);
 		print_width(flag, num_len, sign);
 	}
