@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 21:52:50 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/13 15:20:10 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/13 15:52:04 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,11 +82,16 @@ void		print_integer(flags *flag, va_list args)
 	int				num_len;
 
 	sign = '\0';
-	if ((number = va_arg(args, int)) < 0)
+	if (*flag->ptr == 'd' || *flag->ptr == 'i')
 	{
-		sign = '-';
-		number *= -1;
+		if ((number = va_arg(args, int)) < 0)
+		{
+			sign = '-';
+			number *= -1;
+		}
 	}
+	else
+		number = va_arg(args, unsigned int);
 	num_len = ft_countdigit((unsigned int)number);
 	if (flag->left_align)
 	{
