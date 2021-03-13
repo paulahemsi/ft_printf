@@ -6,7 +6,7 @@
 #    By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/05 21:18:02 by phemsi-a          #+#    #+#              #
-#    Updated: 2021/03/12 14:58:20 by phemsi-a         ###   ########.fr        #
+#    Updated: 2021/03/13 13:37:14 by phemsi-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ LIBFT = ./libraries/libft/
 SRC = ./source/
 PRINT = ./source/parsing_identifiers/print_
 
-FILES = $(SRC)ft_printf.c $(SRC)flags_parser.c $(PRINT)char.c $(PRINT)string.c $(PRINT)pointer.c $(PRINT)integer.c $(PRINT)unsigned_int.c $(PRINT)hex.c $(LIBFT)ft_strdup.c $(LIBFT)ft_strchr.c $(LIBFT)ft_strjoin.c $(LIBFT)ft_substr.c $(LIBFT)ft_itoa.c $(LIBFT)ft_putstr_bonus.c $(LIBFT)ft_strlen.c $(LIBFT)ft_putchar_bonus.c $(LIBFT)ft_isdigit.c $(LIBFT)ft_atoi.c $(LIBFT)ft_isalpha.c $(LIBFT)ft_putnbr_bonus.c $(LIBFT)ft_memset.c $(LIBFT)ft_numlen.c $(LIBFT)ft_countdigit_bonus.c $(LIBFT)ft_itoa_hex.c
+FILES = $(SRC)ft_printf.c $(SRC)flags_parser.c $(PRINT)char.c $(PRINT)string.c $(PRINT)pointer.c $(PRINT)integer.c $(PRINT)unsigned_int.c $(PRINT)hex.c $(LIBFT)ft_strdup.c $(LIBFT)ft_strchr.c $(LIBFT)ft_strjoin.c $(LIBFT)ft_substr.c $(LIBFT)ft_itoa.c $(LIBFT)ft_putstr_bonus.c $(LIBFT)ft_strlen.c $(LIBFT)ft_putchar_bonus.c $(LIBFT)ft_isdigit.c $(LIBFT)ft_atoi.c $(LIBFT)ft_isalpha.c $(LIBFT)ft_putnbr_bonus.c $(LIBFT)ft_memset.c $(LIBFT)ft_numlen.c $(LIBFT)ft_countdigit_bonus.c $(LIBFT)ft_itoa_hex.c $(LIBFT)ft_putnbr_unsigned.c
 OBJECTS = ft_printf.o flags_parser.o print_char.o print_string.o print_pointer.o print_integer.o print_unsigned_int.o print_hex.o ft_strdup.o ft_strchr.o ft_strjoin.o ft_substr.o ft_itoa.o ft_putstr_bonus.o ft_strlen.o ft_putchar_bonus.o ft_isdigit.o ft_atoi.o ft_isalpha.o ft_putnbr_bonus.o ft_memset.o ft_numlen.o ft_countdigit_bonus.o ft_itoa_hex.o
 
 CC = clang

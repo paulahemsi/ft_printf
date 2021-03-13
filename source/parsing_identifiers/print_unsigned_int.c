@@ -6,24 +6,11 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 22:52:22 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/12 23:59:28 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/13 13:36:08 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../ft_printf.h"
-
-static void	ft_putnbr_unsigned(unsigned int nb)
-{
-	if (nb / 10 < 1)
-	{
-		ft_putchar(nb + '0');
-	}
-	else
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
-}
 
 static void	print_precision(flags *flag, int precision)
 {

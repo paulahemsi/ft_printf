@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_putnbr_unsigned.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/12 10:26:06 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/13 13:46:24 by phemsi-a         ###   ########.fr       */
+/*   Created: 2021/03/13 13:35:35 by phemsi-a          #+#    #+#             */
+/*   Updated: 2021/03/13 13:36:25 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include <stdio.h>
-#include <limits.h>
+#include "libft.h"
 
-int main(void)
+void	ft_putnbr_unsigned(unsigned int nb)
 {
-	int i;
-	int *ptr;
-	int **ptr2;
-
-	i = -33;
-	ptr = &i;
-	ptr2 = &ptr;
-	// int hex = 0x2a;
-	ft_printf("%d\n%u\n", INT_MIN, 42);
-	ft_putchar('\n');
-	printf("%d\n%u\n", INT_MIN, 42);
-	ft_putchar('\n');
-	return (0);
+	if (nb / 10 < 1)
+	{
+		ft_putchar(nb + '0');
+	}
+	else
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
 }
