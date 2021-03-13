@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 14:49:08 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/12 18:39:29 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/12 23:32:53 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	print_string(flags *flag, va_list args)
 		string = ft_strdup("(null)");
 	}
 	length = ft_strlen(string);
-	if (flag->left_align)
+	if ((flag->left_align) && (flag->precision != 0))
 		ft_putstr(string);
 	while (flag->min_width > length)
 	{
@@ -35,7 +35,7 @@ void	print_string(flags *flag, va_list args)
 		flag->length++;
 		flag->min_width--;
 	}
-	if (!(flag->left_align))
+	if (!(flag->left_align) && (flag->precision != 0))
 		ft_putstr(string);
 	flag->length += ft_strlen(string);
 	free(string);
