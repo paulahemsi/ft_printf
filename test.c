@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 10:26:06 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/13 13:46:24 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/13 14:04:17 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ int main(void)
 	ptr = &i;
 	ptr2 = &ptr;
 	// int hex = 0x2a;
-	ft_printf("%d\n%u\n", INT_MIN, 42);
+	ft_printf("{%.*d}", 0, 42);
 	ft_putchar('\n');
-	printf("%d\n%u\n", INT_MIN, 42);
+	printf("{%.*d}", 0, 42);
 	ft_putchar('\n');
 	return (0);
 }

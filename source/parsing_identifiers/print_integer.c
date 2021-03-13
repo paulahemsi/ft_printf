@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 21:52:50 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/13 13:34:18 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/13 14:12:32 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ static void	print_rigth_align(flags *flag, int num_len, char sign, int number)
 		print_sign(flag, sign);
 	}
 	print_precision(flag, (flag->precision - num_len));
-	if (flag->precision != 0)
+	if (number)
 		ft_putnbr_unsigned(number);
 }
 
@@ -92,7 +92,7 @@ void		print_integer(flags *flag, va_list args)
 	{
 		print_sign(flag, sign);
 		print_precision(flag, (flag->precision - num_len));
-		if ((flag->precision != 0))
+		if (number)
 			ft_putnbr_unsigned(number);
 		print_width(flag, num_len, sign);
 	}
