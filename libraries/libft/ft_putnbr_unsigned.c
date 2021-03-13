@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 13:35:35 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/13 13:36:25 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/13 13:52:08 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_putnbr_unsigned(unsigned int nb)
 	}
 	else
 	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
+		ft_putnbr_unsigned(nb / 10);
+		ft_putnbr_unsigned(nb % 10);
 	}
 }
