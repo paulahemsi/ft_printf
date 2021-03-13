@@ -6,11 +6,12 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 23:34:03 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/12 18:44:48 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/13 09:29:26 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../ft_printf.h"
+#include <stdio.h>
 
 static void	print_precision(flags *flag, int precision)
 {
@@ -27,7 +28,7 @@ static void	print_width(flags *flag, int hex_len)
 	char	c;
 	int		limit;
 
-	if ((flag->zero_padding) && !(flag->precision) && !(flag->left_align))
+	if ((flag->zero_padding) && (flag->precision == -1) && !(flag->left_align))
 		c = '0';
 	else
 		c = ' ';
