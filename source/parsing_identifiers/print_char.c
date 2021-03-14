@@ -6,13 +6,13 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 18:18:16 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/13 19:14:55 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/13 21:51:10 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../ft_printf.h"
 
-static void	print_left_align(flags *flag, va_list args)
+static void	print_c(flags *flag, va_list args)
 {
 	if (*flag->ptr == '%')
 		ft_putchar(*flag->ptr);
@@ -21,31 +21,25 @@ static void	print_left_align(flags *flag, va_list args)
 	flag->length++;
 }
 
-static void	print_right_align(flags *flag, va_list args)
+static void	print_width(flags *flag, char padding)
 {
-	if (*flag->ptr == '%')
-		ft_putchar(*flag->ptr);
-	else
-		ft_putchar((char)va_arg(args, int));
+	ft_putchar(padding);
 	flag->length++;
+	flag->min_width--;
 }
 
-void	print_char(flags *flag, va_list args)
+void		print_char(flags *flag, va_list args)
 {
-	char c;
+	char padding;
 
 	if ((flag->zero_padding) && (*flag->ptr == '%') && !(flag->left_align))
-		c = '0';
+		padding = '0';
 	else
-		c = ' ';
+		padding = ' ';
 	if (flag->left_align)
-		print_left_align(flag, args);
+		print_c(flag, args);
 	while (flag->min_width > 1)
-	{
-		ft_putchar(c);
-		flag->length++;
-		flag->min_width--;
-	}
+		print_width(flag, padding);
 	if (!(flag->left_align))
-		print_right_align(flag, args);
+		print_c(flag, args);
 }
