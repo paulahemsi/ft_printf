@@ -6,54 +6,59 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 09:50:17 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/13 09:49:52 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/14 01:00:30 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-char	*ft_itoa_hex(unsigned long int number, char case_conversion_char)
+static void	invert_hex(t_itoa_hex *aux)
 {
-	char	*hex;
-	int		convert_to_hex;
-	int		length;
-	int		case_conversion;
-	char	temp;
+	while (aux->length < (aux->case_c / 2))
+	{
+		aux->temp = aux->hex[aux->length];
+		aux->hex[aux->length] = aux->hex[aux->case_c - aux->length - 1];
+		aux->hex[aux->case_c - aux->length - 1] = aux->temp;
+		aux->length++;
+	}
+}
 
-	length = ft_countdigit(number);
-	if (!(hex = (char *)malloc((length + 1) * sizeof(char))))
+static void	convert_to_hex(t_itoa_hex *aux, unsigned long int *number)
+{
+	while (*number > 0)
+	{
+		aux->to_hex = *number % 16;
+		if (aux->to_hex < 10)
+			aux->hex[aux->length] = aux->to_hex + 48;
+		else
+			aux->hex[aux->length] = aux->to_hex + aux->case_c;
+		*number /= 16;
+		aux->length++;
+	}
+}
+
+char		*ft_itoa_hex(unsigned long int number, char case_conversion_char)
+{
+	t_itoa_hex	aux;
+
+	aux.length = ft_countdigit(number);
+	if (!(aux.hex = (char *)malloc((aux.length + 1) * sizeof(char))))
 		return (NULL);
 	if (case_conversion_char == 'X')
-		case_conversion = 55;
+		aux.case_c = 55;
 	else
-		case_conversion = 87;
+		aux.case_c = 87;
 	if (number == 0)
 	{
-		hex[0] = '0';
-		hex[1] = '\0';
-		return(hex);
+		aux.hex[0] = '0';
+		aux.hex[1] = '\0';
+		return (aux.hex);
 	}
-	length = 0;
-	while (number > 0)
-	{
-		convert_to_hex = number % 16;
-		if (convert_to_hex < 10)
-			hex[length] = convert_to_hex + 48;
-		else
-			hex[length] = convert_to_hex + case_conversion;
-		number /= 16;
-		length++;
-	}
-	hex[length] = '\0';
-	case_conversion = ft_strlen(hex);
-	length = 0;
-	while (length < (case_conversion/2))
-    {
-        temp = hex[length];
-        hex[length] = hex[case_conversion - length - 1];
-        hex[case_conversion - length - 1] = temp;
-        length++;
-    }
-	return (hex);
+	aux.length = 0;
+	convert_to_hex(&aux, &number);
+	aux.hex[aux.length] = '\0';
+	aux.case_c = ft_strlen(aux.hex);
+	aux.length = 0;
+	invert_hex(&aux);
+	return (aux.hex);
 }

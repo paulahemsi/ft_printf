@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 10:26:06 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/13 21:22:51 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/13 23:28:58 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,12 @@
 #include <stdio.h>
 #include <limits.h>
 
-int main(void)
+int	main(void)
 {
+	ft_printf("|%c|\n", 'x');
+	printf("|%c|\n", 'x');
+	ft_printf("|%3c|\n", 'x');
+	printf("|%3c|\n", 'x');
 	ft_printf("|%3.0d|\n", 10);
 	printf("|%3.0d|\n", 10);
 	ft_putchar('\n');
@@ -37,6 +41,7 @@ int main(void)
 	ft_printf("|%.x|\n", 0);
 	printf("|%.x|\n", 0);
 	ft_putchar('\n');
+	ft_putstr("aqui\n");
 	ft_printf("|%*.*x| |%*.*X|\n", 1, 50, 5000, 1, 0, 10);
 	printf("|%*.*x| |%*.*X|\n", 1, 50, 5000, 1, 0, 10);
 	ft_putchar('\n');

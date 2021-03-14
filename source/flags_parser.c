@@ -6,13 +6,13 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 15:11:09 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/13 20:41:44 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/13 23:10:52 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-static void	identifier_parser(flags *flag, va_list args, char **initial_ptr)
+static void	identifier_parser(t_flags *flag, va_list args, char **initial_ptr)
 {
 	if ((*flag->ptr == 'c') || (*flag->ptr == '%'))
 		print_char(flag, args);
@@ -20,9 +20,7 @@ static void	identifier_parser(flags *flag, va_list args, char **initial_ptr)
 		print_string(flag, args);
 	else if (*flag->ptr == 'd' || *flag->ptr == 'i' || *flag->ptr == 'u')
 		print_integer(flag, args);
-	else if (*flag->ptr == 'p')
-		print_pointer(flag, args);
-	else if (*flag->ptr == 'x' || *flag->ptr == 'X')
+	else if (*flag->ptr == 'x' || *flag->ptr == 'X' || *flag->ptr == 'p')
 		print_hex(flag, args);
 	else
 	{
@@ -32,7 +30,7 @@ static void	identifier_parser(flags *flag, va_list args, char **initial_ptr)
 	}
 }
 
-static void	update_width(flags *flag, va_list args)
+static void	update_width(t_flags *flag, va_list args)
 {
 	if (*flag->ptr == '*')
 	{
@@ -51,7 +49,7 @@ static void	update_width(flags *flag, va_list args)
 	}
 }
 
-static void	update_padding(flags *flag)
+static void	update_padding(t_flags *flag)
 {
 	if (*flag->ptr == '-')
 		flag->left_align = TRUE;
@@ -60,7 +58,7 @@ static void	update_padding(flags *flag)
 	flag->ptr++;
 }
 
-static void	update_precision(flags *flag, va_list args)
+static void	update_precision(t_flags *flag, va_list args)
 {
 	flag->ptr++;
 	if (*flag->ptr == '*')
@@ -84,11 +82,11 @@ static void	update_precision(flags *flag, va_list args)
 
 size_t		flags_parser(char **ptr, va_list args, size_t length)
 {
-	flags	flag;
+	t_flags	flag;
 	char	*initial_ptr;
 
 	initial_ptr = *ptr;
-	ft_memset(&flag, 0, sizeof(flag));
+	ft_memset(&flag, FALSE, sizeof(flag));
 	flag.precision = -1;
 	flag.length = length;
 	flag.ptr = *ptr + 1;

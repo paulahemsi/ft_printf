@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 22:05:05 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/07 22:10:45 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/14 00:00:46 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		ft_numlen(int number)
 		return (1);
 	else if (number < 0)
 	{
-		digits ++;
+		digits++;
 		number *= -1;
 	}
 	while (number >= 1)

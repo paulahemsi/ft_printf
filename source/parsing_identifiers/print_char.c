@@ -6,13 +6,13 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 18:18:16 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/13 21:51:10 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/13 23:13:01 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../ft_printf.h"
 
-static void	print_c(flags *flag, va_list args)
+static void	print_c(t_flags *flag, va_list args)
 {
 	if (*flag->ptr == '%')
 		ft_putchar(*flag->ptr);
@@ -21,14 +21,14 @@ static void	print_c(flags *flag, va_list args)
 	flag->length++;
 }
 
-static void	print_width(flags *flag, char padding)
+static void	print_width(t_flags *flag, char padding)
 {
 	ft_putchar(padding);
 	flag->length++;
 	flag->min_width--;
 }
 
-void		print_char(flags *flag, va_list args)
+void		print_char(t_flags *flag, va_list args)
 {
 	char padding;
 
