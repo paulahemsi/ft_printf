@@ -59,15 +59,15 @@ To be aware:
 
 ## mindmap
 
-![](fluxograma.jpg)
+![](./mindmaps/mindmap.jpg)
 
 ## %d and %i
 
-![](integers_map.jpg)
+![](./mindmaps/integers_map.jpg)
 
 ## decimal to hexadecimal conversion
 
-![](hex_conversion.jpg)
+![](./mindmaps/hex_conversion.jpg)
 
 ## study
 

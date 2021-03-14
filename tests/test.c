@@ -6,11 +6,11 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 10:26:06 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/13 23:28:58 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/14 11:04:44 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 #include <stdio.h>
 #include <limits.h>
 
@@ -41,7 +41,6 @@ int	main(void)
 	ft_printf("|%.x|\n", 0);
 	printf("|%.x|\n", 0);
 	ft_putchar('\n');
-	ft_putstr("aqui\n");
 	ft_printf("|%*.*x| |%*.*X|\n", 1, 50, 5000, 1, 0, 10);
 	printf("|%*.*x| |%*.*X|\n", 1, 50, 5000, 1, 0, 10);
 	ft_putchar('\n');
@@ -70,5 +69,13 @@ int	main(void)
 	printf("|%.*s|\n", -5, "42");
 	ft_printf("|%026.51%|\n");
 	printf("|0000000000000000000000000%%|\n");
+	ft_printf(" --- Return : %d\n", ft_printf("|%-2s|\n|%.s|\n|%-4s|\n|%-2.4s|\n|%-8.12s|\n|%3s|\n|%8s|\n|%---2s|\n|%.*s|\n|%.0s|\n|%.1s|\n|%.2s|\n|%.4s|\n|%.8s|\n", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, -2, NULL, NULL, NULL, NULL, NULL, NULL));
+	printf(" --- Return : %d\n", printf("|%-2s|\n|%.s|\n|%-4s|\n|%-2.4s|\n|%-8.12s|\n|%3s|\n|%8s|\n|%---2s|\n|%.*s|\n|%.0s|\n|%.1s|\n|%.2s|\n|%.4s|\n|%.8s|\n", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, -2, NULL, NULL, NULL, NULL, NULL, NULL));
+	ft_printf(" --- Return : %d\n", ft_printf("(null)"));
+	printf(" --- Return : %d\n", printf("(null)"));
+	ft_printf(" --- Return : %d\n", ft_printf(""));
+	printf(" --- Return : %d\n", printf(""));
+	ft_printf("|%2.9p|", 1234);
+	printf("|%2.9p|", 1234);
 	return (0);
 }
