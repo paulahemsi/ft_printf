@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 14:49:08 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/13 23:28:19 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/14 10:08:39 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ void		print_string(t_flags *flag, va_list args)
 	if (string == NULL)
 	{
 		free(string);
+		if (flag->precision < 0)
+			flag->precision = 6;
 		string = ft_substr("(null)", 0, flag->precision);
 	}
 	print_s(flag, &string);
