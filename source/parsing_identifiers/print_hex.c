@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 23:34:03 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/13 16:16:58 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/13 20:10:22 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,6 @@ void		print_hex(flags *flag, va_list args)
 	if (flag->left_align)
 		print_width(flag, hex_len, hex);
 	free(hex);
-	flag->length += hex_len;
+	if (*hex != '0' || flag->precision != 0)
+		flag->length += hex_len;
 }

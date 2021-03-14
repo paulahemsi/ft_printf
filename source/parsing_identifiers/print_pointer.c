@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 15:55:43 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/13 16:30:00 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/13 20:53:08 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,6 @@ void	print_pointer(flags *flag, va_list args)
 	if (flag->left_align)
 		print_width(flag, pointer_length, pointer);
 	free(pointer);
-	flag->length += pointer_length;
+	if (*pointer != '0' || flag->precision != 0)
+		flag->length += pointer_length;
 }

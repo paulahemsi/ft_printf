@@ -82,6 +82,6 @@ To be aware:
 
 ## tests
    
+* [ft_printf_test](https://github.com/cacharle/ft_printf_test)
 * [PFT_EXAM](https://github.com/cclaude42/PFT_2019)
 * [42TESTERS-PRINTF](https://github.com/Mazoise/42TESTERS-PRINTF)
-* [ft_printf_test](https://github.com/cacharle/ft_printf_test)

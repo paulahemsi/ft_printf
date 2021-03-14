@@ -6,13 +6,13 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 15:11:09 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/13 19:14:46 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/13 20:41:44 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-static void	identifier_parser(flags *flag, va_list args)
+static void	identifier_parser(flags *flag, va_list args, char **initial_ptr)
 {
 	if ((*flag->ptr == 'c') || (*flag->ptr == '%'))
 		print_char(flag, args);
@@ -24,6 +24,12 @@ static void	identifier_parser(flags *flag, va_list args)
 		print_pointer(flag, args);
 	else if (*flag->ptr == 'x' || *flag->ptr == 'X')
 		print_hex(flag, args);
+	else
+	{
+		ft_putchar(**initial_ptr);
+		flag->length++;
+		flag->ptr = *initial_ptr;
+	}
 }
 
 static void	update_width(flags *flag, va_list args)
@@ -79,7 +85,9 @@ static void	update_precision(flags *flag, va_list args)
 size_t		flags_parser(char **ptr, va_list args, size_t length)
 {
 	flags	flag;
+	char	*initial_ptr;
 
+	initial_ptr = *ptr;
 	ft_memset(&flag, 0, sizeof(flag));
 	flag.precision = -1;
 	flag.length = length;
@@ -91,7 +99,13 @@ size_t		flags_parser(char **ptr, va_list args, size_t length)
 	if (*flag.ptr == '.')
 		update_precision(&flag, args);
 	if ((ft_isalpha(*flag.ptr)) || *flag.ptr == '%')
-		identifier_parser(&flag, args);
+		identifier_parser(&flag, args, &initial_ptr);
+	else
+	{
+		ft_putchar(*initial_ptr);
+		flag.length++;
+		flag.ptr = initial_ptr;
+	}
 	flag.ptr++;
 	*ptr = flag.ptr;
 	return (flag.length);

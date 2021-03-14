@@ -6,7 +6,7 @@
 #    By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/05 21:18:02 by phemsi-a          #+#    #+#              #
-#    Updated: 2021/03/13 14:03:32 by phemsi-a         ###   ########.fr        #
+#    Updated: 2021/03/13 20:15:38 by phemsi-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ test:
 	@echo making test........			
 	@echo cross your fingers, girl!	
 	@echo -----------------------------------
-	@$(CC) $(CFLAGS) -fsanitize=leak $(FILES) test.c && ./a.out
+	@$(CC) -fsanitize=leak $(FILES) test.c && ./a.out
 
 flags:
 	@echo understanding printf flags

@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 21:52:50 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/13 18:48:01 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/13 19:49:02 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,5 +103,6 @@ void		print_integer(flags *flag, va_list args)
 	}
 	else
 		print_rigth_align(flag, num_len, sign, number);
-	flag->length += ft_countdigit((unsigned int)number);
+	if (number || (flag->precision != 0))
+		flag->length += ft_countdigit((unsigned int)number);
 }
