@@ -14,7 +14,7 @@ The key to a successful ft_printf is a well-structured and good extensible code.
 
 ## step_by_step
 
-First of all, I wrote [this little program](understanding_printf_flags.c) just to understand the subject and printf's flags.
+First of all, I wrote [this little program](./tests/understanding_printf_flags.c) just to understand the subject and printf's flags.
 
 Those are the format identifier's I nedd to recode:
 
