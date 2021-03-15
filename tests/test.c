@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 10:26:06 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/14 11:04:44 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/15 12:03:43 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,15 @@ int	main(void)
 	printf(" --- Return : %d\n", printf("(null)"));
 	ft_printf(" --- Return : %d\n", ft_printf(""));
 	printf(" --- Return : %d\n", printf(""));
-	ft_printf("|%2.9p|", 1234);
-	printf("|%2.9p|", 1234);
+	ft_printf("|%09s|\n", "lala la");
+	printf("|%09s|\n", "lala la");
+	ft_printf("|%-09s|\n", "lala la");
+	printf("|%-09s|\n", "lala la");
+	ft_printf("|%2.9p|\n", 1234);
+	printf("|%2.9p|\n", 1234);
+	int n = 10;
+	int *ptr = &n;
+	ft_printf("|%2.9p|\n", ptr);
+	printf("|%2.9p|\n", ptr);
 	return (0);
 }

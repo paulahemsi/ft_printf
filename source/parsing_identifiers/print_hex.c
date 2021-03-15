@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 23:34:03 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/13 23:12:12 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/15 12:02:22 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,8 @@ static void	print_h(t_flags *flag, char **hex)
 	hex_len = ft_strlen(*hex);
 	if (!(flag->left_align))
 		print_width(flag, hex_len, *hex);
-	print_precision(flag, (flag->precision - hex_len));
 	print_pointer_prefix(flag);
+	print_precision(flag, (flag->precision - hex_len));
 	if (**hex != '0' || flag->precision != 0)
 	{
 		ft_putstr(*hex);
@@ -75,7 +75,7 @@ static void	print_h(t_flags *flag, char **hex)
 		print_width(flag, hex_len, *hex);
 }
 
-void		print_hex(t_flags *flag, va_list args)
+int			print_hex(t_flags *flag, va_list args)
 {
 	char	*hex;
 	char	char_case;
@@ -90,6 +90,9 @@ void		print_hex(t_flags *flag, va_list args)
 		char_case = *flag->ptr;
 		hex = ft_itoa_hex(va_arg(args, unsigned int), char_case);
 	}
+	if (hex == NULL)
+		return (ERROR);
 	print_h(flag, &hex);
 	free(hex);
+	return (1);
 }

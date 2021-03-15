@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 21:16:09 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/13 20:34:37 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/15 11:52:43 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ static int	ft_printf_recursive(char *str, va_list args, size_t length)
 	length += ft_strlen(str_aux);
 	free(str_aux);
 	length = flags_parser(&percent_pointer, args, length);
+	if (length == ERROR)
+		return (ERROR);
 	return (ft_printf_recursive(percent_pointer, args, length));
 }
 

@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 14:49:08 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/14 10:08:39 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/15 12:02:40 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,17 @@
 static void	print_s(t_flags *flag, char **string)
 {
 	int		length;
+	char	c;
 
+	c = ' ';
+	if (flag->zero_padding && !(flag->left_align))
+		c = '0';
 	length = ft_strlen(*string);
 	if ((flag->left_align) && (flag->precision != 0))
 		ft_putstr(*string);
 	while (flag->min_width > length)
 	{
-		ft_putchar(' ');
+		ft_putchar(c);
 		flag->length++;
 		flag->min_width--;
 	}
@@ -30,7 +34,7 @@ static void	print_s(t_flags *flag, char **string)
 	flag->length += length;
 }
 
-void		print_string(t_flags *flag, va_list args)
+int			print_string(t_flags *flag, va_list args)
 {
 	char	*string;
 
@@ -44,7 +48,10 @@ void		print_string(t_flags *flag, va_list args)
 		if (flag->precision < 0)
 			flag->precision = 6;
 		string = ft_substr("(null)", 0, flag->precision);
+		if (string == NULL)
+			return (ERROR);
 	}
 	print_s(flag, &string);
 	free(string);
+	return (1);
 }
