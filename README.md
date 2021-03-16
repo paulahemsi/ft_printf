@@ -62,7 +62,7 @@ To be aware:
 
 ![](./mindmaps/mindmap.jpg)
 
-## %d and %i
+## integers
 
 ![](./mindmaps/integers_map.jpg)
 
