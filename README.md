@@ -91,7 +91,7 @@ and
 comand | result |
 ---|------|
 make | compile ftprintf library				|
-make test | compile and run tests (edit your own test here)[tests/test.c]					|
+make test | compile and run tests [edit your own test here](tests/test.c)					|
 make flags | compile and run printf flags example				|
 make clean	| clean .o						|
 make fclean| clean .o and .a				|
