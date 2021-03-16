@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 19:02:18 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/14 00:54:07 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/15 12:50:23 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@
 # include <sys/resource.h>
 # include <stdarg.h>
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE	5
-# endif
-
 # define READ_LINE		1
 # define ERROR			-1
 # define NEW_LINE		1
 # define NO_NEW_LINE	0
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE	32
+# endif
 
 typedef	struct	s_get_next_line
 {

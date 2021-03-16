@@ -5,6 +5,7 @@
 * [Step by step](#step_by_step)
 * [Mindmap](#mindmap) 
 * [Study resources](#study)
+* [Usage](#usage)
 * [Testing](#tests) 
 
 ## introduction  
@@ -80,8 +81,24 @@ To be aware:
 * [%p *versus* %x](https://www.viva64.com/en/k/0019/)
 * [decimal to hex conversion](https://www.youtube.com/watch?v=QJW6qnfhC70)
 
+## usage
+
+clone this repository 
+>git clone https://github.com/paulahemsi/ft_printf.git
+
+and
+
+comand | result |
+---|------|
+make | compile ftprintf library				|
+make test | compile and run tests (edit your own test here)[tests/test.c]					|
+make flags | compile and run printf flags example				|
+make clean	| clean .o						|
+make fclean| clean .o and .a				|
+
 ## tests
    
-* [ft_printf_test](https://github.com/cacharle/ft_printf_test)
-* [PFT_EXAM](https://github.com/cclaude42/PFT_2019)
-* [42TESTERS-PRINTF](https://github.com/Mazoise/42TESTERS-PRINTF)
+* [ft_printf_test](https://github.com/cacharle/ft_printf_test) by [Chacharle](https://github.com/cacharle)
+* [PFT_EXAM](https://github.com/cclaude42/PFT_2019) by [César Claude](https://github.com/cclaude42)
+* [42TESTERS-PRINTF](https://github.com/Mazoise/42TESTERS-PRINTF) by [Mazoise](https://github.com/Mazoise)
+

@@ -6,7 +6,7 @@
 /*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 20:26:47 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/03/15 11:47:53 by phemsi-a         ###   ########.fr       */
+/*   Updated: 2021/03/16 08:28:22 by phemsi-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 # define TRUE		1
 # define FALSE		0
+# define ERROR		-1
 # define POINTER	'p'
 
 typedef	struct	s_ft_printf
